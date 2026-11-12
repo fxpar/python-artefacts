@@ -1,0 +1,25 @@
+# Versions anciennes et essais (gardés en local uniquement)
+_archives/
+
+# Fichiers générés par les scripts (exemples de sortie, bases de données créées au lancement)
+output/
+arborescence/
+*.db
+micro-learning/preview/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.gradio/
+
+# Données locales ou sensibles
+*_local*
+.env
+*.key
+
+# Système
+Thumbs.db
+desktop.ini
+.DS_Store

@@ -1,0 +1,19 @@
+{
+  "layouts": {
+    "left": {
+      "label": "Avatar gauche"
+    },
+
+    "right": {
+      "label": "Avatar droite"
+    },
+
+    "card": {
+      "label": "Carte"
+    },
+
+    "hero": {
+      "label": "Grande illustration"
+    }
+  }
+}

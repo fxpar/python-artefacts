@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+
+<style>
+
+body{
+    font-family:Segoe UI,sans-serif;
+}
+
+#wheel-wrapper{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+
+#wheel-info{
+    margin-top:20px;
+    padding:20px;
+    border-radius:12px;
+    background:#f5f8ff;
+    min-height:120px;
+}
+
+svg{
+    width:100%;
+    height:auto;
+}
+
+.segment{
+    fill:#dbe9ff;
+    stroke:white;
+    stroke-width:3;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.segment:hover{
+    fill:#96c1ff;
+}
+
+.segment-label{
+    font-size:18px;
+    font-weight:600;
+    text-anchor:middle;
+    cursor:pointer;
+    pointer-events:none;
+}
+
+.center-circle{
+    fill:#306cff;
+}
+
+.center-label{
+    fill:white;
+    font-size:20px;
+    font-weight:bold;
+    text-anchor:middle;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="wheel-wrapper">
+
+<svg viewBox="0 0 700 700">
+
+<path class="segment"
+data-title="Contexte"
+data-content="Informations nécessaires pour comprendre la demande."
+d="M350 350 L350 80 A270 270 0 0 1 583 215 Z"/>
+
+<path class="segment"
+data-title="Objectif"
+data-content="Résultat attendu."
+d="M350 350 L583 215 A270 270 0 0 1 583 485 Z"/>
+
+<path class="segment"
+data-title="Contraintes"
+data-content="Règles imposées."
+d="M350 350 L583 485 A270 270 0 0 1 350 620 Z"/>
+
+<path class="segment"
+data-title="Format"
+data-content="Structure finale."
+d="M350 350 L350 620 A270 270 0 0 1 117 485 Z"/>
+
+<path class="segment"
+data-title="Ton"
+data-content="Style rédactionnel."
+d="M350 350 L117 485 A270 270 0 0 1 117 215 Z"/>
+
+<path class="segment"
+data-title="Vérification"
+data-content="Contrôler la qualité."
+d="M350 350 L117 215 A270 270 0 0 1 350 80 Z"/>
+
+<circle
+class="center-circle"
+cx="350"
+cy="350"
+r="90"/>
+
+<text
+class="center-label"
+x="350"
+y="360">
+PROMPT
+</text>
+
+<text class="segment-label" x="350" y="130">Contexte</text>
+<text class="segment-label" x="540" y="240">Objectif</text>
+<text class="segment-label" x="540" y="470">Contraintes</text>
+<text class="segment-label" x="350" y="585">Format</text>
+<text class="segment-label" x="160" y="470">Ton</text>
+<text class="segment-label" x="160" y="240">Vérification</text>
+
+</svg>
+
+<div id="wheel-info">
+Cliquez sur un segment.
+</div>
+
+</div>
+
+<script>
+
+document
+.querySelectorAll(".segment")
+.forEach(segment=>{
+
+    segment.addEventListener(
+        "click",
+        ()=>{
+
+            document
+            .getElementById("wheel-info")
+            .innerHTML=
+            `
+            <h3>${segment.dataset.title}</h3>
+            <p>${segment.dataset.content}</p>
+            `;
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
